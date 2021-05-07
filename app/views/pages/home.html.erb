@@ -1,2 +1,66 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),  url(https://source.unsplash.com/daily?canteen);">
+  <div class="container">
+    <h1>NutzCanteen<strong>!</h1>
+    <p>bestellen und genießen.</p>
+    <a class="btn btn-flat" href="#">Jetzt starten</a>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <strong>Montag</strong>
+    <div class="card-category">
+      <ul style="list-style-type:none;">
+        <% @meals.each do |meal| %>
+          <li><%= link_to meal.name, meal_path(meal) if meal.day == "Montag" %></li>   
+        <% end %>
+      </ul>  
+    </div>
+  </div>
+  
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+   <strong>Dienstag</strong>
+      <div class="card-category">
+        <ul style="list-style-type:none;">
+          <% @meals.each do |meal| %>
+            <li><%= link_to meal.name, meal_path(meal) if meal.day == "Dienstag" %></li>
+          <% end %>
+      </div>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+   <strong>Mittwoch</strong>
+     <div class="card-category">
+        <ul style="list-style-type:none;">
+          <% @meals.each do |meal| %>
+            <li><%= link_to meal.name, meal_path(meal) if meal.day == "Mittwoch" %></li>
+          <% end %>
+      </div>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    <strong>Donnerstag</strong>
+     <div class="card-category">
+        <ul style="list-style-type:none;">
+          <% @meals.each do |meal| %>
+            <li><%= link_to meal.name, meal_path(meal) if meal.day == "Donnerstag" %></li>
+          <% end %>
+      </div>    
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    <strong>Freitag</strong>
+     <div class="card-category">
+        <ul style="list-style-type:none;">
+          <% @meals.each do |meal| %>
+            <li><%= link_to meal.name, meal_path(meal) if meal.day == "Freitag" %></li>
+          <% end %>
+      </div>    
+  </div>
+
+</div>
+
