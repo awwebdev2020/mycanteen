@@ -1,6 +1,12 @@
-<ul>
-  <% @meals.each do |meal| %>
-   <li><%= meal.name %></li>
-  <% end %>
-</ul>
+
+<div class="cards">
+    <% @meals.each do |meal, day| %>
+     
+        <div class="card-category">
+          <%= meal.name %> <%= meal.day %>
+        </div>
+   
+    <% end %>
+</div>
+
 
