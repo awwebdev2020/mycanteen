@@ -1,0 +1,14 @@
+
+<div class="cards">
+    <% @meals.each do |meal, day| %>
+     
+        <div class="card-category">
+          <%= meal.name %> <%= meal.day %>
+          <p><%= link_to  "Bestellen", meal %></p>
+          <p><%= link_to  "Bearbeiten", edit_meal_url(meal) %></p>
+          <p><%= link_to  "Löschen", meal_path(meal), data: { confirm: 'Are you sure?'}, method: :delete, class: "btn-primary" %></p>
+        </div>
+   
+    <% end %>
+</div>
+

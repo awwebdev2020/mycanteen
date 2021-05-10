@@ -23,7 +23,8 @@
               <%= link_to "Bestellungen", "meals", class: "dropdown-item" if current_user.admin? %>
         
               <%= link_to "Gerichte", "meals", class: "dropdown-item" if current_user.admin? %>
-      
+              <%= link_to "Neu", new_meal_url, class: "dropdown-item" if current_user.admin? %>
+              
           </div>
         </li>
       <% else %>

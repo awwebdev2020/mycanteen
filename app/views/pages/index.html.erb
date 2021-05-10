@@ -3,7 +3,12 @@
     <% @meals.each do |meal, day| %>
      
         <div class="card-category">
-          <%= meal.name %> <%= meal.day %>
+          <h4><%= meal.name %> <%= meal.day %></h4>
+          <%= simple_form_for([@meal, @booking]) do |f| %>
+          <%= f.error_notification %>
+          <%= f.submit "Book", class: "btn btn-primary" %>
+          <% end %>
+          <p><%= link_to  "Bestellen", meal_path(meal) %></p>
         </div>
    
     <% end %>
