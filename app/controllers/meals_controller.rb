@@ -9,11 +9,15 @@ class MealsController < ApplicationController
   end
 
   def show
-    @meals= Meal.find(params[:id])
+    set_item
+   #authorize @meal
+    @booking = Booking.new
+    #@meals= Meal.find(params[:id])
   end  
   
   def new
     @meal = Meal.new
+   # authorize @meal
   end
     
   def create
@@ -28,7 +32,8 @@ class MealsController < ApplicationController
   end
     
   def update
-    @meal = Meal.find(params[:id])
+    set_item
+    #@meal = Meal.find(params[:id])
     @meal.update(meal_params)
     @meal.save
     
@@ -38,8 +43,14 @@ class MealsController < ApplicationController
   def destroy
     @meal = Meal.find(params[:id])
     @meal.destroy
+    #render new
   end
-    
+  
+  private
+
+  def set_item
+    @meal = Meal.find(params[:id])
+  end
 
 
   def meal_params

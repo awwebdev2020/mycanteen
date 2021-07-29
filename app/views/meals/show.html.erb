@@ -1,7 +1,18 @@
-<h2><%= @meals.name %></h2>
-<p><%= @meals.description %></h2>
-<p><%= @meals.rating %></h2>
-<p><%= @meals.price %></h2>
-<p><%= @meals.day %></h2>
-<%= link_to  "Bearbeiten", edit_meal_url(@meals) %>
+<h2><%= @meal.name %></h2>
+<p><%= @meal.description %></h2>
+<p><%= @meal.rating %></h2>
+<p><%= @meal.price %></h2>
+<p><%= @meal.day %></h2>
+<%= link_to  "Bearbeiten", edit_meal_path %>
+
 <%= link_to  "Back", root_path %>
+
+
+ <div class="form col-md-6 id="booking-form">
+ <h3>Iß mich!<h3>
+ <%= simple_form_for([@meal, @booking]) do |f| %>
+   <%= f.submit "Book", class: "btn btn-primary" %>
+ 
+ <% end %>
+
+ </div>

@@ -1,0 +1,17 @@
+<h1 style="text-align:center">My Bookings</h1>
+
+<% if policy(@bookings).index? %>
+<div class="main-container" id="index-bookings">
+    <div class="main-container" id="cards-container">
+        <div class="cards">
+            <% @bookings.each do |booking|%>
+                <div class="card">
+                    <h4><%= booking.meal.name %></h4>
+                    <p><%= <%= link_to  "", booking_path(booking.id),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<% end %>

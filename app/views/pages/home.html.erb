@@ -15,7 +15,8 @@
     <div class="card-category">
       <ul style="list-style-type:none;">
         <% @meals.each do |meal| %>
-          <li><%= link_to meal.name, meal_path(meal) if meal.day == "Montag" %></li>   
+          <li><%= link_to meal.name, meal_path(meal) if meal.day == "Montag" %></li> 
+          <li><%= link_to "Bestellen", meal_path(meal) %> </li>  
         <% end %>
       </ul>  
     </div>

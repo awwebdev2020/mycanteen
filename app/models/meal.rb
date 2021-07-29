@@ -1,4 +1,4 @@
 class Meal < ApplicationRecord
-    has_many :users
-    has_many :bookings
+    belongs_to :user
+    has_many :bookings, dependent: :destroy
 end
