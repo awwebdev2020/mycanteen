@@ -1,5 +1,14 @@
 class MealsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
+  
+  def show
+    set_item
+    authorize @meal
+    @booking = Booking.new
+    #@meals= Meal.find(params[:id])
+  end  
+
   def home
     @meals = Meal.all
   end
@@ -8,26 +17,22 @@ class MealsController < ApplicationController
     @meals = Meal.all
   end
 
-  def show
-    set_item
-   #authorize @meal
-    @booking = Booking.new
-    #@meals= Meal.find(params[:id])
-  end  
   
   def new
     @meal = Meal.new
-   # authorize @meal
+    authorize @meal
   end
     
   def create
-    @meal = Meal.new(meal_params)
+    set_item
+    #@meal = Meal.new(meal_params)
     @meal.save
     redirect_to meal_path(@meal)
   end
     
   def edit
-    @meal = Meal.find(params[:id])
+    set_item
+    #@meal = Meal.find(params[:id])
     @meal.save
   end
     
@@ -41,7 +46,8 @@ class MealsController < ApplicationController
   end
     
   def destroy
-    @meal = Meal.find(params[:id])
+    set_item
+    #@meal = Meal.find(params[:id])
     @meal.destroy
     #render new
   end
