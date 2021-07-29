@@ -5,9 +5,11 @@
     <div class="main-container" id="cards-container">
         <div class="cards">
             <% @bookings.each do |booking|%>
-                <div class="card">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),  url(https://source.unsplash.com/daily?canteen);">
                     <h4><%= booking.meal.name %></h4>
-                    <p><%= link_to  "", booking_path(booking.id),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></p>
+                    <h5><%= booking.meal.day %></h5>
+                    <h5><%= booking.user.email %></h5>
+                    <p><%= link_to  "Delete", booking_path(booking.id),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></p>
                 </div>
             <% end %>
         </div>
