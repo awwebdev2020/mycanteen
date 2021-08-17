@@ -2,7 +2,8 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :rating %>
-  <%= f.input :day %>
+  <%= f.input :day, collection: ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'] %>
+   <%= f.input :date %>
   <%= f.input :user_id %>
   <%= f.submit %>
 <% end %>

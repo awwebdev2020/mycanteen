@@ -40,16 +40,21 @@
 
 .cards {
   border-radius: 5px;
-  margin: 10px;
+  margin: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 1px;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: none; /* no underline */
 }
 
 .card {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 380px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +67,12 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-trip {
+  padding: 0px;
+  margin: 0px;
+  display: flexbox;
+
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

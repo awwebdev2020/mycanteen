@@ -1,14 +1,17 @@
+<h1 style="text-align:center">Menu</h1>
 
-<div class="cards">
-    <% @meals.each do |meal, day| %>
-     
-        <div class="card-category">
-          <%= meal.name %> <%= meal.day %>
-          <p><%= link_to  "Bestellen", meal %></p>
-          <p><%= link_to  "Bearbeiten", edit_meal_url(meal) %></p>
-          <p><%= link_to  "Löschen", meal_path(meal), data: { confirm: 'Are you sure?'}, method: :delete, class: "btn-primary" %></p>
+
+<div class="main-container" id="index-bookings">
+    <div class="main-container" id="cards-container">
+        <div class="cards">
+            <% @meals.each do |meal|%>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),  url(https://source.unsplash.com/daily?canteen);">
+                   <h4><%= meal.day %></h5>
+                   <h5><%= meal.name %><%= link_to  "✏️", edit_meal_url(meal) %>  <%= link_to  "🛒", meal_path(meal) %> <%= link_to  "🗑️", meal_path(meal.id),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></h4>
+                  
+                   
+                </div>
+            <% end %>
         </div>
-   
-    <% end %>
+    </div>
 </div>
-

@@ -6,8 +6,8 @@
         <div class="cards">
             <% @meals.each do |meal|%>
                 <div class="card">
-                    <h4><%= <%= link_to  meal.name, meal_path(meal) %></h4>
-                    <p><%= <%= link_to  "", user_meal_path(meal),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></p>
+                    <h4><%= link_to  meal.name, meal_path(meal) %></h4>
+                    <p><%= link_to  "", user_meal_path(meal),data: {confirm: 'Are you suer?'}, method: :delete, remote: true, class: "btn-primary" %></p>
                 </div>
             <% end %>
         </div>
